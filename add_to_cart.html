@@ -37,7 +37,6 @@
     font-family: Arial, Helvetica, sans-serif; 
      }
 
-
     /* ===== Header ===== */
     header {
       background-color: #006d5b;
@@ -111,38 +110,6 @@
     nav ul li .dropdown li:hover {
       background-color: #006d5b;
       color: #fff;
-    }
-
-    /* ===== Search Bar + Profile ===== */
-    .search-bar {
-      display: flex;
-      align-items: center;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      padding: 3px 10px;
-    }
-
-    .search-bar input {
-      border: none;
-      outline: none;
-      padding: 5px;
-      font-size: 14px;
-      width: 120px;
-    }
-
-    .search-bar button {
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-
-    .profile img {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      border: 2px solid #006d5b;
-      margin-left: 10px;
     }
 
     /* ===== Hero Section ===== */
@@ -323,26 +290,26 @@
     }
 
     .back-button {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 20px;
-  background-color: white;
-  color: #006d5b;
-  padding: 8px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 20px;
+      background-color: white;
+      color: #006d5b;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-.back-button:hover {
-  background-color: #e0e0e0;
-}
+    .back-button:hover {
+      background-color: #e0e0e0;
+    }
 
   </style>
 </head>
@@ -351,7 +318,7 @@
   <header>
     <h1> EMPOWERING THE NATION</h1>
     <!-- Back Button -->
-<a href="javascript:history.back()" class="back-button">← Back</a>
+    <a href="javascript:history.back()" class="back-button">← Back</a>
 
     <div class="header-container">
       <img src="_images/logo.jpg" alt="Empowering The Nation Logo" class="logo" />
@@ -383,13 +350,6 @@
           <li><a href="add_to_cart.html">Add To Cart</a></li>
         </ul>
       </nav>
-      <form action="search_bar.html" method="get" class="search-bar">
-        <input type="text" name="q" placeholder="Search ..." />
-        <button type="submit">🔍</button>
-      </form>
-      <div class="profile">
-        <a href="profile.html"><img src="_images/profile.jpg" alt="Profile Icon" /></a>
-      </div>
     </div>
   </header>
 
