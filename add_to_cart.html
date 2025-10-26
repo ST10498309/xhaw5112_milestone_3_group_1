@@ -15,7 +15,6 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/ST10498309/xhaw5112_milestone_3_group_1/add_to_cart">
 
-  
   <link rel="icon" type="image/png" href="_images/logo.jpg">
   <style>
     
@@ -31,11 +30,11 @@
       color: inherit;
     }
 
-      h1 {
-    text-align: center;      
-    color: white;            
-    font-family: Arial, Helvetica, sans-serif; 
-     }
+    h1 {
+      text-align: center;      
+      color: white;            
+      font-family: Arial, Helvetica, sans-serif; 
+    }
 
     /* ===== Header ===== */
     header {
@@ -79,14 +78,13 @@
       white-space: nowrap;
     }
 
-     nav ul li a:hover,
+    nav ul li a:hover,
     .currentPage > a {
       background-color:#e8f0ed ;
       color: #006d5b;
     }
 
-
-     nav ul li .dropdown {
+    nav ul li .dropdown {
       display: none;
       position: absolute;
       top: 35px#e8f0ed;
@@ -99,6 +97,7 @@
       min-width: 150px;
       z-index: 1000;
     }
+
     nav ul li:hover .dropdown {
       display: block;
     }
@@ -468,10 +467,38 @@
     setupButtonGroup('pay-btn');
 
     enrollBtn.addEventListener('click', () => {
+      const form = document.getElementById('enrollForm');
+      const fullName = form.querySelector('input[type="text"]').value.trim();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const phone = form.querySelector('input[type="tel"]').value.trim();
+      const venueSelected = document.querySelector('.venue-btn.active');
+      const paymentSelected = document.querySelector('.pay-btn.active');
+
+      if (!fullName || !email || !phone) {
+        alert("⚠️ Please fill in all your details.");
+        return;
+      }
+
+      if (!venueSelected) {
+        alert("⚠️ Please select a venue option.");
+        return;
+      }
+
+      if (!paymentSelected) {
+        alert("⚠️ Please select a payment option.");
+        return;
+      }
+
+      if (!Array.from(checkboxes).some(box => box.checked)) {
+        alert("⚠️ Please select at least one course to enroll.");
+        return;
+      }
+
+      
       checkboxes.forEach(box => box.checked = false);
       updateTotals();
       document.querySelectorAll('.active').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('enrollForm').reset();
+      form.reset();
       alert("🎉 You have been successfully enrolled! Thank you.");
     });
   </script>
