@@ -8,14 +8,12 @@
   <meta name="keywords" content="contact Empowering the Nation, enquiries, registration, support, information">
   <meta name="author" content="Shania Kuni,Ruvimbo Muchaonyerwa,Zene Nel, Plamedie Muya">
 
-  
   <meta property="og:title" content="Empowering the Nation | Life Skills and Training Courses">
   <meta property="og:description" content="Learn, grow, and succeed with Empowering the Nation. Explore practical, community-based training courses for personal and professional growth.">
   <meta property="og:image" content="_images/hero.shot.index.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/ST10498309/xhaw5112_milestone_3_group_1/contact_us.html">
   <style>
-    /* ===== General Styles ===== */
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -34,7 +32,6 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* ===== Header ===== */
     header {
       background-color: #006d5b;
       border-bottom: 2px solid #e8f0ed;
@@ -115,12 +112,11 @@
       color: #fff;
     }
 
-    /* ===== Hero Section ===== */
     .hero {
       position: relative;
       width: 100%;
       height: 300px;
-      background-image: url('_images/contact.jpg'); /* replace with your contact image */
+      background-image: url('_images/contact\ us.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -137,7 +133,6 @@
       margin: 0;
     }
 
-    /* ===== Main Content ===== */
     .content {
       max-width: 900px;
       margin: 40px auto;
@@ -159,7 +154,6 @@
       margin-bottom: 20px;
     }
 
-    /* ===== Contact Form ===== */
     form {
       background-color: #e8f0ed;
       padding: 25px;
@@ -206,7 +200,6 @@
       margin: 40px 0;
     }
 
-    /* ===== Footer ===== */
     footer {
       background-color: #e8f0ed;
       padding: 20px;
@@ -225,7 +218,6 @@
       margin: 0 5px;
     }
 
-    /* ===== Responsive ===== */
     @media (max-width: 768px) {
       .header-container {
         flex-direction: column;
@@ -246,36 +238,33 @@
     }
 
     .back-button {
-  position: fixed;
-  top: 30px;
-  left: 20px;
-  font-size: 20px;
-  background-color: white;
-  color: #006d5b;
-  padding: 8px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+      position: fixed;
+      top: 30px;
+      left: 20px;
+      font-size: 20px;
+      background-color: white;
+      color: #006d5b;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-.back-button:hover {
-  background-color: #e0e0e0;
-}
-
+    .back-button:hover {
+      background-color: #e0e0e0;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>EMPOWERING THE NATION</h1>
-    <!-- Back Button -->
-<a href="javascript:history.back()" class="back-button">← Back</a>
+    <a href="javascript:history.back()" class="back-button">← Back</a>
 
     <div class="header-container">
       <div class="header-left">
@@ -314,12 +303,10 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <div class="hero" style="background-image: url('_images/contact\ us.webp');">
     <h1>Contact Us</h1>
   </div>
 
-  <!-- Contact Section -->
   <section class="content">
     <h2>We’d Love to Hear From You</h2>
     <p>If you have questions, feedback, or need help with our courses, please reach out. Fill in the form below and we’ll get back to you as soon as possible.</p>
@@ -343,7 +330,6 @@
 
   <hr>
 
-  <!-- Info Section -->
   <section class="content">
     <h2>Contact Information</h2>
     <p><strong>Address:</strong> 123 Empowerment Street, Johannesburg, South Africa</p>
@@ -352,7 +338,6 @@
     <p><strong>Operating Hours:</strong> Monday – Friday, 8:00 AM – 5:00 PM</p>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>Follow us on:</p>
     <a href="#">Facebook</a> |
@@ -363,13 +348,51 @@
   </footer>
 
   <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      alert("Thank you, " + name + "! Your message has been sent successfully.");
-      document.getElementById("contactForm").reset();
-    });
-  </script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const namePattern = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+
+  if (name === "") {
+    alert("Please enter your full name.");
+    return;
+  }
+
+  if (!namePattern.test(name)) {
+    alert("Name can only contain letters and spaces, with no numbers or symbols.");
+    return;
+  }
+
+  if (email === "") {
+    alert("Please enter your email address.");
+    return;
+  }
+
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  if (subject === "") {
+    alert("Please enter the subject.");
+    return;
+  }
+
+  if (message === "") {
+    alert("Please write a message.");
+    return;
+  }
+
+  alert("Thank you, " + name + "! Your message has been sent successfully.");
+  document.getElementById("contactForm").reset();
+});
+</script>
+
 
 </body>
 </html>
